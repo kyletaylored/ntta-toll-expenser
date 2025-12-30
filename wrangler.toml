@@ -1,6 +1,6 @@
 # Cloudflare Worker Configuration for NTTA API Proxy
 
-name = "ntta-api-proxy"
+name = "ntta-toll-expenser"
 main = "workers/api-proxy.js"
 compatibility_date = "2024-01-01"
 
