@@ -1,0 +1,40 @@
+# Cloudflare Worker Configuration for NTTA API Proxy
+
+name = "ntta-api-proxy"
+main = "workers/api-proxy.js"
+compatibility_date = "2024-01-01"
+
+# Account settings (set via wrangler or environment variables)
+# account_id = "your-account-id"
+
+# Worker settings
+workers_dev = true
+
+# Routes - Configure these after deploying to Cloudflare Pages
+# [[routes]]
+# pattern = "ntta-toll-expenser.pages.dev/api/*"
+# zone_name = "pages.dev"
+
+# Environment variables (optional)
+[vars]
+ENVIRONMENT = "production"
+
+# Development settings
+[env.development]
+name = "ntta-api-proxy-dev"
+vars = { ENVIRONMENT = "development" }
+
+# Production settings
+[env.production]
+name = "ntta-api-proxy"
+vars = { ENVIRONMENT = "production" }
+
+# Build configuration
+[build]
+command = ""
+
+# Limits
+limits = { cpu_ms = 50 }
+
+# Compatibility flags
+compatibility_flags = []

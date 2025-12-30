@@ -1,0 +1,8 @@
+# Cloudflare Pages Redirects Configuration
+# https://developers.cloudflare.com/pages/platform/redirects/
+
+# Redirect API calls to Cloudflare Worker
+/api/*  https://ntta-api-proxy.YOUR-SUBDOMAIN.workers.dev/api/:splat  200
+
+# SPA fallback - serve index.html for all other routes
+/*    /index.html   200
